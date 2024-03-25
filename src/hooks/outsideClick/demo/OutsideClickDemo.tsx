@@ -4,7 +4,7 @@ import { useOutsideClick } from '../useOutsideClick';
 export default function OutsideClickDemo() {
   const [count, setCount] = useState<number>(0);
   const callback = () => setCount((prevCount) => prevCount + 1);
-  const ref = useOutsideClick(callback);
+  const ref = useOutsideClick<HTMLButtonElement>(callback);
 
   return (
     <div role="container">

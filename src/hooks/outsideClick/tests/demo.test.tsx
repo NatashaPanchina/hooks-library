@@ -8,6 +8,8 @@ test('useOutsideClick', () => {
   const countDisplay = getByText(/Clicks count:/i);
   const container = getByRole(/container/i);
 
+  expect(countDisplay).toHaveTextContent('Clicks count: 0');
+
   fireEvent.click(button);
   expect(countDisplay).toHaveTextContent('Clicks count: 0');
 
