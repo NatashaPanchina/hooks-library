@@ -3,10 +3,12 @@ import { useRef, useEffect, RefObject } from 'react';
 /**
  * Handles clicks outside the element
  * @param callback - The function that will be called when clicking outside the element
- * @returns {RefObject<any>} the ref to the element being handled
+ * @returns {RefObject<T>} the ref to the element being handled
  */
-export const useOutsideClick = (callback: () => void): RefObject<any> => {
-  const ref = useRef<any>(null);
+export const useOutsideClick = <T extends HTMLElement>(
+  callback: () => void,
+): RefObject<T> => {
+  const ref = useRef<T>(null);
 
   useEffect(() => {
     const handleClick = (event: any) => {
