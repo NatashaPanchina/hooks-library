@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useLocalStorage } from '../useLocalStorage';
 
 export default function LocalStorageDemo() {
-  const [name, setName] = useState<string>('');
+  const [name, setName] = useState('');
   const [storageName, setStorageName] = useLocalStorage('name');
 
   return (
