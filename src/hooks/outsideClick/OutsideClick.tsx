@@ -14,7 +14,7 @@ interface CustomTheme extends Theme {
 }
 
 interface ThemeProps {
-  theme: CustomTheme
+  theme?: CustomTheme
 }
 
 const Title = styled(
@@ -26,6 +26,7 @@ const Title = styled(
 export default function OutsideClick() {
   return (
     <div>
+      <Title>OutsideClick</Title>
       <div>useOutsideClick</div>
       <div>
         <OutsideClickDemo />
