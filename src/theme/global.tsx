@@ -5,7 +5,7 @@ export const inputGlobalStyles = (
   <GlobalStyles
     styles={() => ({
       body: {
-        backgroundColor: '#0f0d0e',
+        backgroundColor: '#231f20',
         color: '#e3ceab',
       },
     })}

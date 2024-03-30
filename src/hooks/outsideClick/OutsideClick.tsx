@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import OutsideClickDemo from './demo/OutsideClickDemo';
 import { CodeBlock, zenburn } from 'react-code-blocks';
 import { demoText } from './text';
 import { styled } from '@mui/system';
+import { ThemeProps } from '../../theme';
 
-const Title = styled('div')(({ theme }) => ({
-  color: theme.text,
+const Title = styled((props: ThemeProps & HTMLAttributes<HTMLDivElement>) => (
+  <div {...props} />
+))(({ theme }) => ({
+  fontSize: '1.8rem',
+  fontWeight: 700,
+  color: theme.colors.green.bright,
 }));
 
 export default function OutsideClick() {
   return (
     <div>
-      <div>useOutsideClick</div>
+      <Title>useOutsideClick</Title>
       <div>
         <OutsideClickDemo />
       </div>
