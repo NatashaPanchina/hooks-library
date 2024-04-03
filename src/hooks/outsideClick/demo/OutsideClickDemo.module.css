@@ -1,0 +1,30 @@
+.container {
+  background-color: #0f0d0e;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.header {
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #fcba28;
+  padding: 8px;
+  color: #0f0d0e;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: #be8c1e;
+  transition: all 0.5s ease-out;
+}
+
+.counter {
+  padding-top: 16px;
+}
