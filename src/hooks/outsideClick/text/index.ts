@@ -1,15 +1,19 @@
 export const demoText = `import React, { useState } from 'react';
 import { useOutsideClick } from '../useOutsideClick';
+import styles from './OutsideClickDemo.module.css';
 
 export default function OutsideClickDemo() {
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState(0);
   const callback = () => setCount((prevCount) => prevCount + 1);
   const ref = useOutsideClick<HTMLButtonElement>(callback);
 
   return (
-    <div role="container">
-      <button ref={ref}>Click outside me!</button>
-      <div>Clicks count: {count}</div>
+    <div className={styles.container} role="container">
+      <div className={styles.header}>USEOUTSIDECLICK</div>
+      <button className={styles.button} ref={ref}>
+        CLICK OUTSIDE ME!
+      </button>
+      <div className={styles.counter}>Clicks count: {count}</div>
     </div>
   );
 }`;
@@ -44,3 +48,5 @@ export const useOutsideClick = <T extends HTMLElement>(
 
   return ref;
 };`;
+
+export const api = `useOutsideClick<T extends HTMLElement>(callback: () => void): RefObject<T>`;

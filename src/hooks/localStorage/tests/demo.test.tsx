@@ -4,13 +4,13 @@ import LocalStorageDemo from '../demo/LocalStorageDemo';
 
 test('useLocalStorage', () => {
   const { getByText, getByLabelText } = render(<LocalStorageDemo />);
-  const button = getByText(/Push/i);
-  const input = getByLabelText(/Text your name/i);
-  const output = getByText(/Your name in the local storage/i);
+  const button = getByText(/Change/i);
+  const input = getByLabelText(/Edit your name/i);
+  const output = getByText(/Hello/i);
 
-  expect(output).toHaveTextContent('Your name in the local storage:');
+  expect(output).toHaveTextContent('Hello !');
 
   fireEvent.change(input, { target: { value: 'Natalia' } });
   fireEvent.click(button);
-  expect(output).toHaveTextContent('Your name in the local storage: Natalia');
+  expect(output).toHaveTextContent('Hello Natalia!');
 });
