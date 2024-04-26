@@ -1,0 +1,27 @@
+{
+    "name": "re-Hooks",
+    "short_name": "re-Hooks",
+    "description": "A modern & reliable React Hooks Library",
+    "theme_color": "#0f0d0e",
+    "background_color": "#0f0d0e",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "maskable_icon.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "logo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "logo512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

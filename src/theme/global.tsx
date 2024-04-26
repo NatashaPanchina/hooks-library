@@ -2,6 +2,7 @@ import React, { HTMLAttributes } from 'react';
 import { GlobalStyles } from '@mui/material';
 import { styled } from '@mui/system';
 import { ThemeProps } from '.';
+import { Link, LinkProps } from 'react-router-dom';
 
 export const inputGlobalStyles = (
   <GlobalStyles
@@ -22,7 +23,7 @@ export const Title = styled(
 )(({ theme }) => ({
   fontSize: '2rem',
   fontWeight: 700,
-  color: theme.colors.green.bright,
+  color: theme.colors.main.violet,
 }));
 
 export const DescriptionTitle = styled(
@@ -36,4 +37,10 @@ export const Container = styled(
   (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
 )(({ theme }) => ({
   padding: `${theme.spacing(5)} 0`,
+}));
+
+export const SourceCodeLink = styled((props: ThemeProps & LinkProps) => (
+  <Link {...props} />
+))(({ theme }) => ({
+  color: theme.colors.main.violet,
 }));

@@ -3,8 +3,14 @@ import OutsideClickDemo from './demo/OutsideClickDemo';
 import { CodeBlock } from 'react-code-blocks';
 import { api, demoText } from './text';
 import ParametersTable from '../../components/shared/parameters/ParametersTable';
-import { Container, DescriptionTitle, Title } from '../../theme/global';
+import {
+  Container,
+  DescriptionTitle,
+  SourceCodeLink,
+  Title,
+} from '../../theme/global';
 import { codeTheme } from '../../theme/code';
+import { pages } from '../../utils/constants/pages';
 
 export default function OutsideClick() {
   const parameters = [
@@ -64,6 +70,12 @@ export default function OutsideClick() {
             boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
           }}
         />
+      </Container>
+      <Container>
+        <DescriptionTitle>SOURCE CODE:</DescriptionTitle>
+        <SourceCodeLink to={pages.source.useOutsideClick}>
+          useOutsideClick on Github
+        </SourceCodeLink>
       </Container>
     </div>
   );

@@ -22,21 +22,70 @@ export const Container = styled(
 export const HomeLink = styled((props: ThemeProps & NavLinkProps) => (
   <NavLink {...props} />
 ))(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
   textDecoration: 'none',
   color: theme.colors.text,
+}));
+
+export const HomeLinkDesc = styled(
+  (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
+)(() => ({
+  display: 'none',
+  '@media (min-width: 600px)': {
+    display: 'flex',
+  },
 }));
 
 export const DocsLink = styled((props: ThemeProps & NavLinkProps) => (
   <NavLink {...props} />
 ))(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  height: 'inherit',
   color: theme.colors.text,
   paddingLeft: theme.spacing(3),
   paddingRight: theme.spacing(3),
+  marginLeft: 'auto',
   '&:hover': {
     color: theme.colors.main.yellow,
     transition: 'all 0.3s ease-out',
   },
   '&.active': {
     color: theme.colors.main.yellow,
+    borderBottom: `1px solid ${theme.colors.text}`,
+  },
+}));
+
+export const SvgLink = styled((props: ThemeProps & NavLinkProps) => (
+  <NavLink {...props} />
+))(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 'inherit',
+  width: 50,
+}));
+
+export const SvgContainer = styled(
+  (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
+)(() => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: 'inherit',
+  width: 50,
+}));
+
+export const Svg = styled((props: ThemeProps & HTMLAttributes<SVGElement>) => (
+  <svg {...props} />
+))(() => ({
+  height: 30,
+  width: 30,
+  '&:hover': {
+    height: 33,
+    width: 33,
+    transition: 'all .15s ease-in-out',
   },
 }));

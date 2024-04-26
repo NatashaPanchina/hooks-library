@@ -2,9 +2,15 @@ import React from 'react';
 import LocalStorageDemo from './demo/LocalStorageDemo';
 import { CodeBlock } from 'react-code-blocks';
 import { api, demoText } from './text';
-import { Container, DescriptionTitle, Title } from '../../theme/global';
+import {
+  Container,
+  DescriptionTitle,
+  SourceCodeLink,
+  Title,
+} from '../../theme/global';
 import { codeTheme } from '../../theme/code';
 import ParametersTable from '../../components/shared/parameters/ParametersTable';
+import { pages } from '../../utils/constants/pages';
 
 export default function LocalStorage() {
   const parameters = [
@@ -77,6 +83,12 @@ export default function LocalStorage() {
             boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
           }}
         />
+      </Container>
+      <Container>
+        <DescriptionTitle>SOURCE CODE:</DescriptionTitle>
+        <SourceCodeLink to={pages.source.useLocalStorage}>
+          useLocalStorage on Github
+        </SourceCodeLink>
       </Container>
     </div>
   );

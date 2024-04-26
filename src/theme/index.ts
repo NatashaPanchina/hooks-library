@@ -10,6 +10,7 @@ export const themeColors = {
       pink: '#F38BA3',
       yellow: '#FCBA28',
       purple: '#b586f8',
+      violet: '#CA89FF',
     },
     black: '#000000',
     grey: {
@@ -35,6 +36,7 @@ export interface CustomTheme extends Theme {
       pink: '#F38BA3';
       yellow: '#FCBA28';
       purple: '#b586f8';
+      violet: '#CA89FF';
     };
     black: '#000000';
     grey: {
