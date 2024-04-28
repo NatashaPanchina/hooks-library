@@ -5,12 +5,15 @@ import { api, demoText } from './text';
 import {
   Container,
   DescriptionTitle,
+  LinkSvg,
   SourceCodeLink,
   Title,
 } from '../../theme/global';
 import { codeTheme } from '../../theme/code';
 import ParametersTable from '../../components/shared/parameters/ParametersTable';
 import { pages } from '../../utils/constants/pages';
+import DocNavigation from '../../components/pageNavigation/DocNavigation';
+import { ReactComponent as LinkIcon } from '../../assets/icons/link.svg';
 
 export default function LocalStorage() {
   const parameters = [
@@ -37,59 +40,129 @@ export default function LocalStorage() {
       desc: 'A function to set the state of the value in the local storage.',
     },
   ];
+  const scrollPositions = [
+    {
+      from: 0,
+      to: 220,
+    },
+    {
+      from: 220,
+      to: 400,
+    },
+    {
+      from: 400,
+      to: 600,
+    },
+    {
+      from: 600,
+      to: 800,
+    },
+    {
+      from: 800,
+      to: 1000,
+    },
+    {
+      from: 1000,
+      to: 1200,
+    },
+    {
+      from: 1200,
+      to: 1300,
+    },
+  ];
 
   return (
-    <div>
-      <Title>useLocalStorage</Title>
-      <Container>
-        <DescriptionTitle>DESCRIPTION:</DescriptionTitle>
-        <div>
-          The useLocalStorage hook is an easy way to synchronize the state of a
-          component with the data stored in local storage. It automatically
-          reads the initial value from local storage when the component mounts
-          and updates the local storage whenever the state changes.
+    <>
+      <div>
+        <Title>useLocalStorage</Title>
+        <Container id="description">
+          <DescriptionTitle>
+            DESCRIPTION:
+            <a href="#description">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <div>
+            The useLocalStorage hook is an easy way to synchronize the state of
+            a component with the data stored in local storage. It automatically
+            reads the initial value from local storage when the component mounts
+            and updates the local storage whenever the state changes.
+          </div>
+        </Container>
+        <Container id="api">
+          <DescriptionTitle>
+            API:{' '}
+            <a href="#api">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <CodeBlock
+            text={api}
+            language="javascript"
+            theme={codeTheme}
+            showLineNumbers={false}
+            customStyle={{
+              borderRadius: '8px',
+              boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
+            }}
+          />
+        </Container>
+        <div id="parameters">
+          <ParametersTable
+            title="PARAMETERS"
+            parameters={parameters}
+            link="#parameters"
+          />
         </div>
-      </Container>
-      <Container>
-        <DescriptionTitle>API:</DescriptionTitle>
-        <CodeBlock
-          text={api}
-          language="javascript"
-          theme={codeTheme}
-          showLineNumbers={false}
-          customStyle={{
-            borderRadius: '8px',
-            boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
-          }}
-        />
-      </Container>
-      <ParametersTable title="PARAMETERS" parameters={parameters} />
-      <ParametersTable title="RETURNED VALUE" parameters={returnedValue} />
-      <Container>
-        <DescriptionTitle>DEMO:</DescriptionTitle>
-        <LocalStorageDemo />
-      </Container>
-      <Container>
-        <DescriptionTitle>EXAMPLE:</DescriptionTitle>
-        <CodeBlock
-          text={demoText}
-          language="javascript"
-          theme={codeTheme}
-          customStyle={{
-            height: '400px',
-            overflowY: 'scroll',
-            marginTop: '16px',
-            borderRadius: '8px',
-            boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
-          }}
-        />
-      </Container>
-      <Container>
-        <DescriptionTitle>SOURCE CODE:</DescriptionTitle>
-        <SourceCodeLink to={pages.source.useLocalStorage}>
-          useLocalStorage on Github
-        </SourceCodeLink>
-      </Container>
-    </div>
+        <div id="returnedValue">
+          <ParametersTable
+            title="RETURNED VALUE"
+            parameters={returnedValue}
+            link="#returnedValue"
+          />
+        </div>
+        <Container id="demo">
+          <DescriptionTitle>
+            DEMO:{' '}
+            <a href="#demo">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <LocalStorageDemo />
+        </Container>
+        <Container id="example">
+          <DescriptionTitle>
+            EXAMPLE:
+            <a href="#example">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <CodeBlock
+            text={demoText}
+            language="javascript"
+            theme={codeTheme}
+            customStyle={{
+              height: '400px',
+              overflowY: 'scroll',
+              marginTop: '16px',
+              borderRadius: '8px',
+              boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
+            }}
+          />
+        </Container>
+        <Container id="sourceCode">
+          <DescriptionTitle>
+            SOURCE CODE:{' '}
+            <a href="#sourceCode">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <SourceCodeLink to={pages.source.useLocalStorage}>
+            useLocalStorage on Github
+          </SourceCodeLink>
+        </Container>
+      </div>
+      <DocNavigation positions={scrollPositions} />
+    </>
   );
 }

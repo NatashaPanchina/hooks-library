@@ -10,4 +10,5 @@ export const pages = {
   docs: '/docs',
   useOutsideClick: '/docs/useOutsideClick',
   useLocalStorage: '/docs/useLocalStorage',
+  useFetch: '/docs/useFetch',
 };

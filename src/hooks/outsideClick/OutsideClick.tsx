@@ -6,11 +6,14 @@ import ParametersTable from '../../components/shared/parameters/ParametersTable'
 import {
   Container,
   DescriptionTitle,
+  LinkSvg,
   SourceCodeLink,
   Title,
 } from '../../theme/global';
 import { codeTheme } from '../../theme/code';
 import { pages } from '../../utils/constants/pages';
+import DocNavigation from '../../components/pageNavigation/DocNavigation';
+import { ReactComponent as LinkIcon } from '../../assets/icons/link.svg';
 
 export default function OutsideClick() {
   const parameters = [
@@ -27,56 +30,126 @@ export default function OutsideClick() {
       desc: 'The ref to the element being handled.',
     },
   ];
+  const scrollPositions = [
+    {
+      from: 0,
+      to: 200,
+    },
+    {
+      from: 200,
+      to: 300,
+    },
+    {
+      from: 300,
+      to: 490,
+    },
+    {
+      from: 490,
+      to: 600,
+    },
+    {
+      from: 600,
+      to: 800,
+    },
+    {
+      from: 800,
+      to: 950,
+    },
+    {
+      from: 950,
+      to: 1000,
+    },
+  ];
 
   return (
-    <div>
-      <Title>useOutsideClick</Title>
-      <Container>
-        <DescriptionTitle>DESCRIPTION:</DescriptionTitle>
-        <div>
-          The useOutsideClick hook can handle the clicks outside the element.
+    <>
+      <div>
+        <Title>useOutsideClick</Title>
+        <Container id="description">
+          <DescriptionTitle>
+            DESCRIPTION:{' '}
+            <a href="#description">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <div>
+            The useOutsideClick hook can handle the clicks outside the element.
+          </div>
+        </Container>
+        <Container id="api">
+          <DescriptionTitle>
+            API:{' '}
+            <a href="#api">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <CodeBlock
+            text={api}
+            language="javascript"
+            theme={codeTheme}
+            showLineNumbers={false}
+            customStyle={{
+              borderRadius: '8px',
+              boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
+            }}
+          />
+        </Container>
+        <div id="parameters">
+          <ParametersTable
+            title="PARAMETERS"
+            parameters={parameters}
+            link="#parameters"
+          />
         </div>
-      </Container>
-      <Container>
-        <DescriptionTitle>API:</DescriptionTitle>
-        <CodeBlock
-          text={api}
-          language="javascript"
-          theme={codeTheme}
-          showLineNumbers={false}
-          customStyle={{
-            borderRadius: '8px',
-            boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
-          }}
-        />
-      </Container>
-      <ParametersTable title="PARAMETERS" parameters={parameters} />
-      <ParametersTable title="RETURNED VALUE" parameters={returnedValue} />
-      <Container>
-        <DescriptionTitle>DEMO:</DescriptionTitle>
-        <OutsideClickDemo />
-      </Container>
-      <Container>
-        <DescriptionTitle>EXAMPLE:</DescriptionTitle>
-        <CodeBlock
-          text={demoText}
-          language="javascript"
-          theme={codeTheme}
-          customStyle={{
-            height: '400px',
-            overflowY: 'scroll',
-            marginTop: '16px',
-            borderRadius: '8px',
-            boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
-          }}
-        />
-      </Container>
-      <Container>
-        <DescriptionTitle>SOURCE CODE:</DescriptionTitle>
-        <SourceCodeLink to={pages.source.useOutsideClick}>
-          useOutsideClick on Github
-        </SourceCodeLink>
-      </Container>
-    </div>
+        <div id="returnedValue">
+          <ParametersTable
+            title="RETURNED VALUE"
+            parameters={returnedValue}
+            link="#returnedValue"
+          />
+        </div>
+        <Container id="demo">
+          <DescriptionTitle>
+            DEMO:{' '}
+            <a href="#demo">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <OutsideClickDemo />
+        </Container>
+        <Container id="example">
+          <DescriptionTitle>
+            EXAMPLE:
+            <a href="#example">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <CodeBlock
+            text={demoText}
+            language="javascript"
+            theme={codeTheme}
+            customStyle={{
+              height: '400px',
+              overflowY: 'scroll',
+              marginTop: '16px',
+              borderRadius: '8px',
+              boxShadow: '1px 2px 3px rgba(0,0,0,0.35)',
+            }}
+          />
+        </Container>
+        <Container id="sourceCode">
+          <DescriptionTitle>
+            SOURCE CODE:
+            <a href="#sourceCode">
+              <LinkSvg as={LinkIcon} />
+            </a>
+          </DescriptionTitle>
+          <SourceCodeLink to={pages.source.useOutsideClick}>
+            useOutsideClick on Github
+          </SourceCodeLink>
+        </Container>
+      </div>
+      <DocNavigation positions={scrollPositions} />
+    </>
   );
 }

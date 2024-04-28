@@ -3,7 +3,6 @@ import { Outlet } from 'react-router-dom';
 import { DocsContainer, DocsLink, NavContainer } from './Docs.styled';
 import { Grid } from '@mui/material';
 import { pages } from '../../utils/constants/pages';
-import DocNavigation from '../pageNavigation/DocNavigation';
 
 export default function Docs() {
   const gridStyles = {
@@ -24,13 +23,15 @@ export default function Docs() {
         <div>
           <DocsLink to={pages.useLocalStorage}>useLocalStorage</DocsLink>
         </div>
+        <div>
+          <DocsLink to={pages.useFetch}>useFetch</DocsLink>
+        </div>
       </NavContainer>
       <Grid item xs={12}>
         <DocsContainer>
           <Outlet />
         </DocsContainer>
       </Grid>
-      <DocNavigation />
     </Grid>
   );
 }

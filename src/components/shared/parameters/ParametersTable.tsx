@@ -9,6 +9,8 @@ import {
   Type,
   ValuesTable,
 } from './ParametersTable.styled';
+import { LinkSvg } from '../../../theme/global';
+import { ReactComponent as LinkIcon } from '../../../assets/icons/link.svg';
 
 interface ParameterType {
   name: string;
@@ -19,12 +21,22 @@ interface ParameterType {
 interface PropsTypes {
   title: string;
   parameters: Array<ParameterType>;
+  link: string;
 }
 
-export default function ParametersTable({ title, parameters }: PropsTypes) {
+export default function ParametersTable({
+  title,
+  parameters,
+  link,
+}: PropsTypes) {
   return (
     <Container>
-      <DescriptionTitle>{title}</DescriptionTitle>
+      <DescriptionTitle>
+        {title}{' '}
+        <a href={link}>
+          <LinkSvg as={LinkIcon} />
+        </a>
+      </DescriptionTitle>
       <ValuesTable>
         <HeaderGrid>
           <div>Name</div>

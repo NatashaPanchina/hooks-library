@@ -13,7 +13,6 @@ export const NavContainer = styled(
   height: `calc(100vh - 56px)`,
   padding: theme.spacing(3),
   width: `calc(200px - ${theme.spacing(3 * 2)})`,
-  backgroundColor: theme.colors.background,
   '@media (min-width: 1200px)': {
     display: 'block',
   },

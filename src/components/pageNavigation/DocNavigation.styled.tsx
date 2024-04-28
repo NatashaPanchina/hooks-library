@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { AnchorHTMLAttributes } from 'react';
 import { styled } from '@mui/system';
 import { ThemeProps } from '../../theme';
 import { HTMLAttributes } from 'react';
@@ -27,12 +27,20 @@ export const Title = styled(
 }));
 
 export const AnchorContainer = styled(
-  (props: ThemeProps & HTMLAttributes<HTMLAnchorElement>) => <a {...props} />,
+  (props: ThemeProps & AnchorHTMLAttributes<HTMLAnchorElement>) => (
+    <a {...props} />
+  ),
 )(({ theme }) => ({
   display: 'block',
-  paddingBottom: theme.spacing(3),
+  marginBottom: theme.spacing(3),
   color: alpha(theme.colors.text, 0.5),
   '&:hover': {
     color: theme.colors.text,
+  },
+  '&.current': {
+    borderLeft: `2px solid ${theme.colors.main.yellow}`,
+    paddingLeft: theme.spacing(3),
+    color: theme.colors.text,
+    transition: 'all 0.2s ease-out',
   },
 }));
