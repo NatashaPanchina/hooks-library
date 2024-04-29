@@ -4,6 +4,7 @@ import {
   RightNavContainer,
   Title,
 } from './DocNavigation.styled';
+import ScrollToHashElement from '../../ScrollToHashElement';
 
 interface ArrayType {
   from: number;
@@ -24,6 +25,7 @@ export default function DocNavigation({ positions }: PropsTypes) {
 
   return (
     <RightNavContainer>
+      <ScrollToHashElement />
       <Title>CONTENTS</Title>
       <AnchorContainer
         href="#description"
