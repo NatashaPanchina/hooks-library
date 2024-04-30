@@ -4,6 +4,7 @@ import {
   RightNavContainer,
   Title,
 } from './DocNavigation.styled';
+import { useScrollToHashElement } from '../../utils/hooks/useScrollToHashElement';
 
 interface ArrayType {
   from: number;
@@ -21,6 +22,7 @@ export default function DocNavigation({ positions }: PropsTypes) {
     document.addEventListener('scroll', handleScroll);
     return () => document.removeEventListener('scroll', handleScroll);
   }, []);
+  useScrollToHashElement();
 
   return (
     <RightNavContainer>
