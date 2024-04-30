@@ -44,6 +44,13 @@ export const Container = styled(
   (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
 )(({ theme }) => ({
   padding: `${theme.spacing(5)} 0`,
+  scrollMarginTop: theme.spacing(14),
+}));
+
+export const ParametersContainer = styled(
+  (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
+)(({ theme }) => ({
+  scrollMarginTop: theme.spacing(14),
 }));
 
 export const SourceCodeLink = styled((props: ThemeProps & LinkProps) => (

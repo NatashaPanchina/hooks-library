@@ -7,6 +7,7 @@ import {
   Container,
   DescriptionTitle,
   LinkSvg,
+  ParametersContainer,
   SourceCodeLink,
   Title,
 } from '../../theme/global';
@@ -94,20 +95,20 @@ export default function OutsideClick() {
             }}
           />
         </Container>
-        <div id="parameters">
+        <ParametersContainer id="parameters">
           <ParametersTable
             title="PARAMETERS"
             parameters={parameters}
             link="#parameters"
           />
-        </div>
-        <div id="returnedValue">
+        </ParametersContainer>
+        <ParametersContainer id="returnedValue">
           <ParametersTable
             title="RETURNED VALUE"
             parameters={returnedValue}
             link="#returnedValue"
           />
-        </div>
+        </ParametersContainer>
         <Container id="demo">
           <DescriptionTitle>
             DEMO:{' '}
