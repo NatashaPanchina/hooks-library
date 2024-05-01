@@ -6,8 +6,14 @@ import { Divider } from '@mui/material';
 export const DescriptionTitle = styled(
   (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
 )(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
   fontWeight: 800,
   paddingBottom: theme.spacing(2),
+  height: 30,
+  '&:hover svg': {
+    display: 'flex',
+  },
 }));
 
 export const Container = styled(
