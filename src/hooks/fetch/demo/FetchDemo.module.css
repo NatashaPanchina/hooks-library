@@ -7,6 +7,9 @@
   @media (min-width: 600px) {
     min-height: 360px;
   }
+  @media (min-width: 1200px) {
+    min-height: 450px;
+  }
 }
 
 .header {
