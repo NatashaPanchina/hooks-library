@@ -174,7 +174,7 @@ export default function Fetch() {
             </a>
           </DescriptionTitle>
           <SourceCodeLink to={pages.source.useFetch}>
-            useOutsideClick on Github
+            useFetch on Github
           </SourceCodeLink>
         </Container>
       </div>

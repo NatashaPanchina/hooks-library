@@ -3,6 +3,10 @@
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+  min-height: 570px;
+  @media (min-width: 600px) {
+    min-height: 360px;
+  }
 }
 
 .header {
