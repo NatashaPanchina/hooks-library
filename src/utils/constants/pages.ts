@@ -5,6 +5,8 @@ export const pages = {
       'https://github.com/NatashaPanchina/hooks-library/blob/main/src/hooks/outsideClick/useOutsideClick.ts',
     useLocalStorage:
       'https://github.com/NatashaPanchina/hooks-library/blob/main/src/hooks/localStorage/useLocalStorage.ts',
+    useFetch:
+      'https://github.com/NatashaPanchina/hooks-library/blob/main/src/hooks/fetch/useFetch.ts',
   },
   home: '/',
   docs: '/docs',

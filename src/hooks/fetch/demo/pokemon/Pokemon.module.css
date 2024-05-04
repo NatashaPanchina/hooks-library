@@ -1,0 +1,158 @@
+.container {
+  display: block;
+  padding: 10px;
+  text-align: left;
+  @media (min-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
+.img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: 600px) {
+    width: 250px;
+    height: 250px;
+    margin-right: 20px;
+    margin-left: 0px;
+  }
+  @media (min-width: 1200px) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.number {
+  margin-left: 8px;
+  color: #a7a286;
+}
+
+.block_title {
+  margin-bottom: 14px;
+}
+
+.type {
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 2px 14px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 14px;
+  margin-right: 14px;
+}
+
+.type::first-letter,
+.ability::first-letter,
+.name::first-letter {
+  text-transform: uppercase;
+}
+
+.normal {
+  background-color: #a4acaf;
+  color: #212121;
+}
+
+.fire {
+  background-color: #fd7d24;
+}
+
+.water {
+  background-color: #4592c4;
+}
+
+.grass {
+  background-color: #9bcc50;
+  color: #212121;
+}
+
+.flying {
+  background-color: #3dc7ef;
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  color: #212121;
+}
+
+.fighting {
+  background-color: #d56723;
+}
+
+.poison {
+  background-color: #b97fc9;
+}
+
+.electric {
+  background-color: #eed535;
+  color: #212121;
+}
+
+.ground {
+  background-color: #f7de3f;
+  background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  color: #212121;
+}
+
+.rock {
+  background-color: #a38c21;
+}
+
+.psychic {
+  background-color: #f366b9;
+}
+
+.ice {
+  background-color: #51c4e7;
+  color: #212121;
+}
+
+.bug {
+  background-color: #729f3f;
+}
+
+.ghost {
+  background-color: #7b62a3;
+}
+
+.steel {
+  background-color: #9eb7b8;
+  color: #212121;
+}
+
+.dragon {
+  background-color: #53a4cf;
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+}
+
+.dark {
+  background-color: #707070;
+}
+
+.fairy {
+  background-color: #fdb9e9;
+  color: #212121;
+}
+
+.abilities {
+  background-color: #30a7d7;
+  border-radius: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: #212121;
+  width: fit-content;
+}
+
+.ability {
+  display: inline-block;
+  margin: 4px;
+}

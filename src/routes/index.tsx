@@ -4,6 +4,7 @@ import OutsideClick from '../hooks/outsideClick/OutsideClick';
 import LocalStorage from '../hooks/localStorage/LocalStorage';
 import Home from '../components/home/Home';
 import Docs from '../components/docs/Docs';
+import Fetch from '../hooks/fetch/Fetch';
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
           {
             path: 'useLocalStorage',
             element: <LocalStorage />,
+          },
+          {
+            path: 'useFetch',
+            element: <Fetch />,
           },
         ],
       },
