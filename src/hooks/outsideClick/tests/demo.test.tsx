@@ -1,6 +1,9 @@
 import { fireEvent, render } from '@testing-library/react';
 import React from 'react';
 import OutsideClickDemo from '../demo/OutsideClickDemo';
+import '@testing-library/jest-dom/extend-expect'
+
+
 
 test('useOutsideClick', () => {
   const { getByText, getByRole } = render(<OutsideClickDemo />);
