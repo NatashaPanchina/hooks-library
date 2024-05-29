@@ -1,4 +1,5 @@
-import React from 'react';
+/// <reference types="vite-plugin-svgr/client" />
+
 import {
   Container,
   DescriptionTitle,
@@ -8,7 +9,7 @@ import {
   Title,
 } from '../../theme/global';
 import FetchDemo from './demo/FetchDemo';
-import { ReactComponent as LinkIcon } from '../../assets/icons/link.svg';
+import LinkIcon from '../../assets/icons/link.svg?react';
 import { CodeBlock } from 'react-code-blocks';
 import { codeTheme } from '../../theme/code';
 import { api, demoText } from './text';

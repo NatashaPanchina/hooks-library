@@ -1,4 +1,4 @@
-import React from 'react';
+/// <reference types="vite-plugin-svgr/client" />
 import {
   Container,
   DocsLink,
@@ -9,8 +9,8 @@ import {
   SvgLink,
 } from './Header.styled';
 import { pages } from '../../utils/constants/pages';
-import { ReactComponent as GithubIcon } from '../../assets/icons/github.svg';
-import { ReactComponent as LogoIcon } from '../../assets/icons/logoIcon.svg';
+import GithubIcon from '../../assets/icons/github.svg?react';
+import LogoIcon from '../../assets/icons/logoIcon.svg?react';
 
 export default function Header() {
   return (

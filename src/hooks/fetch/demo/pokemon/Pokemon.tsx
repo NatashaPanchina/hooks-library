@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Pokemon.module.css';
 
 interface Type {
@@ -60,6 +59,7 @@ export default function Pokemon({ data }: PropsType) {
   return (
     <div className={styles.container}>
       <img
+        alt="pokemon-picture"
         className={styles.img}
         src={data ? data.sprites.other[`official-artwork`].front_default : ''}
       />

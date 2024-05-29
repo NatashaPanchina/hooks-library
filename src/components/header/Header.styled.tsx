@@ -1,4 +1,3 @@
-import React from 'react';
 import { alpha, styled } from '@mui/system';
 import { ThemeProps } from '../../theme';
 import { HTMLAttributes } from 'react';

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useOutsideClick } from '../useOutsideClick';
 import styles from './OutsideClickDemo.module.css';
 

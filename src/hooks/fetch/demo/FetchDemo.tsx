@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useFetch } from '../useFetch';
 import styles from './FetchDemo.module.css';
 import Pokemon from './pokemon/Pokemon';

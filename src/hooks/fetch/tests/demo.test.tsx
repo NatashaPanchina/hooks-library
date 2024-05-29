@@ -1,27 +1,32 @@
+import { render } from '@testing-library/react';
+import FetchDemo from '../demo/FetchDemo';
+import { server } from './mocks/server';
 import { http, HttpResponse } from 'msw';
-import { setupServer } from 'msw/node';
-
-export const handlers = [
-  http.get('https://example.com/user', () => {
-    // ...and respond to them using this JSON response.
-    return HttpResponse.json({
-      id: 'c7b3d8e0-5e0b-4b0f-8b3a-3b9f4b3d3b3d',
-      firstName: 'John',
-      lastName: 'Maverick',
-    });
-  }),
-];
-
-const server = setupServer(
-  http.get('/greeting', () => {
-    return HttpResponse.json({ greeting: 'hello there' });
-  }),
-);
 
 beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-test('just sample', () => {
-  expect(1 + 2).toBe(3);
+test('should display pokemons info', async () => {
+  const { findByText, findByAltText } = render(<FetchDemo />);
+  const pokemonNumber = await findByText(/№/i);
+  const pokemonPicture = await findByAltText('pokemon-picture');
+
+  expect(pokemonNumber).toHaveTextContent('№ 7');
+  expect(pokemonPicture).toHaveAttribute(
+    'src',
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
+  );
+});
+
+test('should handle errors when fetching the pokemon', async () => {
+  server.use(
+    http.get('https://pokeapi.co/api/v2/pokemon/7', () => {
+      return new HttpResponse(null, { status: 500 });
+    }),
+  );
+  const { findByText } = render(<FetchDemo />);
+
+  const error = await findByText(/Failed/i);
+  expect(error).toBeInTheDocument();
 });

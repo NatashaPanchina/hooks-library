@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { DocsContainer, DocsLink, NavContainer } from './Docs.styled';
 import { Grid } from '@mui/material';

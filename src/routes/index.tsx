@@ -1,4 +1,3 @@
-import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import OutsideClick from '../hooks/outsideClick/OutsideClick';
 import LocalStorage from '../hooks/localStorage/LocalStorage';
