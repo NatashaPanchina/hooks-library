@@ -34,7 +34,7 @@ describe('when data is fetched', () => {
   test('should handle errors', async () => {
     server.use(
       http.get('https://pokeapi.co/api/v2/pokemon/7', () => {
-        return new HttpResponse('Fetching Error', { status: 500 });
+        return new HttpResponse('{ "message": "Fetching Error" }', { status: 500 });
       }),
     );
     const { result } = renderHook(() =>
@@ -42,8 +42,8 @@ describe('when data is fetched', () => {
     );
 
     await waitFor(() => {
-      expect(result.current.data).toBeNull();
-      expect(result.current.error).toBe('Fetching Error');
+      expect(result.current.data).toStrictEqual({ message: 'Fetching Error' });
+      expect(result.current.error).toBe(null);
       expect(result.current.loading).toBe(false);
     });
   });
