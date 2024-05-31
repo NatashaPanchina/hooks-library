@@ -1,4 +1,4 @@
-import React, { AnchorHTMLAttributes } from 'react';
+import { AnchorHTMLAttributes } from 'react';
 import { styled } from '@mui/system';
 import { ThemeProps } from '../../theme';
 import { HTMLAttributes } from 'react';

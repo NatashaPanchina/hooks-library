@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useLocalStorage } from '../useLocalStorage';
 import styles from './LocalStorageDemo.module.css';
 

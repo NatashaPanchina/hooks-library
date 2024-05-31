@@ -1,3 +1,4 @@
+/// <reference types="vite-plugin-svgr/client" />
 import React from 'react';
 import {
   Container,
@@ -10,7 +11,7 @@ import {
   ValuesTable,
 } from './ParametersTable.styled';
 import { LinkSvg } from '../../../theme/global';
-import { ReactComponent as LinkIcon } from '../../../assets/icons/link.svg';
+import LinkIcon from '../../../assets/icons/link.svg?react';
 
 interface ParameterType {
   name: string;

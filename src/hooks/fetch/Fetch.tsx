@@ -1,8 +1,5 @@
 /// <reference types="vite-plugin-svgr/client" />
 
-import LocalStorageDemo from './demo/LocalStorageDemo';
-import { CodeBlock } from 'react-code-blocks';
-import { api, demoText } from './text';
 import {
   Container,
   DescriptionTitle,
@@ -11,84 +8,102 @@ import {
   SourceCodeLink,
   Title,
 } from '../../theme/global';
+import FetchDemo from './demo/FetchDemo';
+import LinkIcon from '../../assets/icons/link.svg?react';
+import { CodeBlock } from 'react-code-blocks';
 import { codeTheme } from '../../theme/code';
+import { api, demoText } from './text';
 import ParametersTable from '../../components/shared/parameters/ParametersTable';
 import { pages } from '../../utils/constants/pages';
 import DocNavigation from '../../components/pageNavigation/DocNavigation';
-import LinkIcon from '../../assets/icons/link.svg?react';
 
-export default function LocalStorage() {
+export default function Fetch() {
   const parameters = [
     {
-      name: 'key',
+      name: 'url',
       type: 'string',
-      desc: 'The key of the local storage value.',
+      desc: 'The URL to fetch data from.',
     },
     {
-      name: 'initialValue',
-      type: 'string',
-      desc: 'The initial value to use if there is no value in the local storage with the provided key.',
+      name: 'options',
+      type: 'object',
+      desc: 'Additional options for the fetch request. If options.manual = true is set, useFetch will not be executed by default, and the execution needs to be triggered by run.',
     },
   ];
   const returnedValue = [
     {
-      name: 'value',
-      type: 'string',
-      desc: 'The current state of the value stored in the local storage.',
+      name: 'state',
+      type: 'object',
+      desc: 'The state object containing the fetched data and fetching status.',
     },
     {
-      name: 'setStorageValue',
-      type: '(newValue: string) => void',
-      desc: 'A function to set the state of the value in the local storage.',
+      name: 'state.data',
+      type: 'any | null',
+      desc: 'The fetched data if the fetch was successful, otherwise null.',
+    },
+    {
+      name: 'state.loading',
+      type: 'boolean',
+      desc: 'The fetching loading status.',
+    },
+    {
+      name: 'state.error',
+      type: 'string | null',
+      desc: 'The error message if an error occurred during the fetch, otherwise null.',
+    },
+    {
+      name: 'state.run',
+      type: '() => void',
+      desc: 'The run method triggers a fetch execution.',
     },
   ];
   const scrollPositions = [
     {
       from: 0,
-      to: 220,
+      to: 210,
     },
     {
-      from: 220,
-      to: 400,
+      from: 210,
+      to: 330,
     },
     {
-      from: 400,
-      to: 600,
+      from: 330,
+      to: 550,
     },
     {
-      from: 600,
-      to: 800,
+      from: 550,
+      to: 900,
     },
     {
-      from: 800,
-      to: 1000,
+      from: 900,
+      to: 1350,
     },
     {
-      from: 1000,
-      to: 1200,
+      from: 1350,
+      to: 1550,
     },
     {
-      from: 1200,
-      to: 1300,
+      from: 1550,
+      to: 1750,
     },
   ];
 
   return (
     <>
       <div>
-        <Title>useLocalStorage</Title>
+        <Title>useFetch</Title>
         <Container id="description">
           <DescriptionTitle>
-            DESCRIPTION:
+            DESCRIPTION:{' '}
             <a href="#description">
               <LinkSvg as={LinkIcon} />
             </a>
           </DescriptionTitle>
           <div>
-            The useLocalStorage hook is an easy way to synchronize the state of
-            a component with the data stored in local storage. It automatically
-            reads the initial value from local storage when the component mounts
-            and updates the local storage whenever the state changes.
+            The useFetch hook allows you to easily fetch data from a specified
+            URL using the fetch API and provides a consistent pattern for
+            handling loading, success, and error states. The fetching data which
+            will be automatically triggered when the component is first loaded.
           </div>
         </Container>
         <Container id="api">
@@ -130,7 +145,7 @@ export default function LocalStorage() {
               <LinkSvg as={LinkIcon} />
             </a>
           </DescriptionTitle>
-          <LocalStorageDemo />
+          <FetchDemo />
         </Container>
         <Container id="example">
           <DescriptionTitle>
@@ -154,13 +169,13 @@ export default function LocalStorage() {
         </Container>
         <Container id="sourceCode">
           <DescriptionTitle>
-            SOURCE CODE:{' '}
+            SOURCE CODE:
             <a href="#sourceCode">
               <LinkSvg as={LinkIcon} />
             </a>
           </DescriptionTitle>
-          <SourceCodeLink to={pages.source.useLocalStorage}>
-            useLocalStorage on Github
+          <SourceCodeLink to={pages.source.useFetch}>
+            useFetch on Github
           </SourceCodeLink>
         </Container>
       </div>

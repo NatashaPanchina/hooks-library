@@ -1,4 +1,5 @@
-import React from 'react';
+/// <reference types="vite-plugin-svgr/client" />
+
 import OutsideClickDemo from './demo/OutsideClickDemo';
 import { CodeBlock } from 'react-code-blocks';
 import { api, demoText } from './text';
@@ -14,7 +15,7 @@ import {
 import { codeTheme } from '../../theme/code';
 import { pages } from '../../utils/constants/pages';
 import DocNavigation from '../../components/pageNavigation/DocNavigation';
-import { ReactComponent as LinkIcon } from '../../assets/icons/link.svg';
+import LinkIcon from '../../assets/icons/link.svg?react';
 
 export default function OutsideClick() {
   const parameters = [
