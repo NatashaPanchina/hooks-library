@@ -7,10 +7,13 @@ export const pages = {
       'https://github.com/NatashaPanchina/hooks-library/blob/main/src/hooks/localStorage/useLocalStorage.ts',
     useFetch:
       'https://github.com/NatashaPanchina/hooks-library/blob/main/src/hooks/fetch/useFetch.ts',
+    useToggle:
+    ''
   },
   home: '/',
   docs: '/docs',
   useOutsideClick: '/docs/useOutsideClick',
   useLocalStorage: '/docs/useLocalStorage',
   useFetch: '/docs/useFetch',
+  useToggle: '/docs/useToggle'
 };
