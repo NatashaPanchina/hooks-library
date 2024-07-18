@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
 /**
- * fetching data
- * @param url - The URL to fetch data from
- * @param options - Additional options for the fetch request. If options.manual = true is set, useFetch will not be executed by default, and the execution needs to be triggered by run
+ * Fetching data
+ *
+ * @param url the URL to fetch data from
+ * @param options additional options for the fetch request. If options.manual = true is set, useFetch will not be executed by default, and the execution needs to be triggered by run
  * @returns state of the fetch request
  */
 export const useFetch = (url: string, options?: { manual: boolean }) => {
