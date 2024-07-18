@@ -16,6 +16,7 @@ interface PropsTypes {
 
 export default function DocNavigation({ positions }: PropsTypes) {
   const [scrollPosition, setScrollPosition] = useState(0);
+  //console.log(scrollPosition);
 
   useEffect(() => {
     const handleScroll = () => setScrollPosition(window.scrollY);

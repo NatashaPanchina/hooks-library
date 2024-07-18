@@ -16,14 +16,17 @@ export default function Docs() {
   return (
     <Grid container sx={gridStyles}>
       <NavContainer>
-        <div>
-          <DocsLink to={pages.useOutsideClick}>useOutsideClick</DocsLink>
+      <div>
+          <DocsLink to={pages.useFetch}>useFetch</DocsLink>
         </div>
         <div>
           <DocsLink to={pages.useLocalStorage}>useLocalStorage</DocsLink>
         </div>
         <div>
-          <DocsLink to={pages.useFetch}>useFetch</DocsLink>
+          <DocsLink to={pages.useOutsideClick}>useOutsideClick</DocsLink>
+        </div>
+        <div>
+          <DocsLink to={pages.useToggle}>useToggle</DocsLink>
         </div>
       </NavContainer>
       <Grid item xs={12}>

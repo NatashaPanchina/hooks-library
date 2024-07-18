@@ -4,6 +4,7 @@ import LocalStorage from '../hooks/localStorage/LocalStorage';
 import Home from '../components/home/Home';
 import Docs from '../components/docs/Docs';
 import Fetch from '../hooks/fetch/Fetch';
+import Toggle from '../hooks/toggle/Toggle';
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
             path: 'useFetch',
             element: <Fetch />,
           },
+          {
+            path: 'useToggle',
+            element: <Toggle/>
+          }
         ],
       },
     ],

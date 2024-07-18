@@ -9,8 +9,8 @@ test('should set the initial values', () => {
     useFetch(`https://pokeapi.co/api/v2/pokemon/7`),
   );
 
-  expect(result.current.data).toBeNull();
-  expect(result.current.error).toBeNull();
+  expect(result.current.data).toBe(null);
+  expect(result.current.error).toBe(null);
   expect(result.current.loading).toBe(true);
 });
 
@@ -26,7 +26,7 @@ describe('when data is fetched', () => {
 
     await waitFor(() => {
       expect(result.current.data).toEqual(pokemonData);
-      expect(result.current.error).toBeNull();
+      expect(result.current.error).toBe(null);
       expect(result.current.loading).toBe(false);
     });
   });

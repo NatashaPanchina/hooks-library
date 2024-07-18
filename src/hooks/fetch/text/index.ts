@@ -2,7 +2,6 @@ export const api = `useFetch(url: string, options?: { manual: boolean })`;
 
 export const demoText = `import React, { useState } from 'react';
 import { useFetch } from '../useFetch';
-import styles from './FetchDemo.module.css';
 import Pokemon from './pokemon/Pokemon';
 
 export default function FetchDemo() {
@@ -12,15 +11,14 @@ export default function FetchDemo() {
   );
 
   return (
-    <div className={styles.container} role="container">
-      <div className={styles.header}>USEFETCH</div>
+    <div>
+      <div>USEFETCH</div>
       {error ? (
         <div>Failed</div>
       ) : (
         <>
-          <div className={styles.buttons}>
+          <div>
             <div
-              className={styles.prev}
               onClick={() =>
                 setPokemon((prev) => {
                   if (prev === 1) return prev;
@@ -31,7 +29,6 @@ export default function FetchDemo() {
               Previous
             </div>
             <div
-              className={styles.next}
               onClick={() => setPokemon((prev) => prev + 1)}
             >
               Next

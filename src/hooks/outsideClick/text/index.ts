@@ -1,6 +1,5 @@
 export const demoText = `import React, { useState } from 'react';
 import { useOutsideClick } from '../useOutsideClick';
-import styles from './OutsideClickDemo.module.css';
 
 export default function OutsideClickDemo() {
   const [count, setCount] = useState(0);
@@ -8,12 +7,12 @@ export default function OutsideClickDemo() {
   const ref = useOutsideClick<HTMLButtonElement>(callback);
 
   return (
-    <div className={styles.container} role="container">
-      <div className={styles.header}>USEOUTSIDECLICK</div>
-      <button className={styles.button} ref={ref}>
+    <div>
+      <div>USEOUTSIDECLICK</div>
+      <button ref={ref}>
         CLICK OUTSIDE ME!
       </button>
-      <div className={styles.counter}>Clicks count: {count}</div>
+      <div>Clicks count: {count}</div>
     </div>
   );
 }`;
@@ -22,7 +21,8 @@ export const hookText = `import { useRef, useEffect, RefObject } from 'react';
 
 /**
  * Handles clicks outside the element
- * @param callback - The function that will be called when clicking outside the element
+ *
+ * @param callback the function that will be called when clicking outside the element
  * @returns {RefObject<T>} the ref to the element being handled
  */
 export const useOutsideClick = <T extends HTMLElement>(
@@ -44,7 +44,7 @@ export const useOutsideClick = <T extends HTMLElement>(
     return () => {
       document.removeEventListener('click', handleClick);
     };
-  }, [ref]);
+  }, [ref, callback]);
 
   return ref;
 };`;

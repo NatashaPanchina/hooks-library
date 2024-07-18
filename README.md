@@ -4,6 +4,7 @@
 
 ## 📜 Hooks
 
+- [useFetch](https://re-hooks.web.app/)
 - [useLocalStorage](https://re-hooks.web.app/docs/useLocalStorage)
 - [useOutsideClick](https://re-hooks.web.app/docs/useOutsideClick)
-- [useFetch](https://re-hooks.web.app/)
+- [useToggle](https://re-hooks.web.app/docs/useToggle)
