@@ -76,15 +76,15 @@ export default function Fetch() {
     },
     {
       from: 900,
-      to: 1350,
-    },
-    {
-      from: 1350,
       to: 1550,
     },
     {
       from: 1550,
-      to: 1750,
+      to: 1700,
+    },
+    {
+      from: 1700,
+      to: 1900,
     },
   ];
 
