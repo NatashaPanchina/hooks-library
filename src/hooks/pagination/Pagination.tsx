@@ -8,55 +8,76 @@ import {
   SourceCodeLink,
   Title,
 } from '../../theme/global';
-import FetchDemo from './demo/FetchDemo';
+import PaginationDemo from './demo/PaginationDemo';
 import LinkIcon from '../../assets/icons/link.svg?react';
+import ParametersTable from '../../components/shared/parameters/ParametersTable';
 import { CodeBlock } from 'react-code-blocks';
 import { codeTheme } from '../../theme/code';
 import { api, demoText } from './text';
-import ParametersTable from '../../components/shared/parameters/ParametersTable';
 import { pages } from '../../utils/constants/pages';
 import DocNavigation from '../../components/pageNavigation/DocNavigation';
 
-export default function Fetch() {
+export default function Pagination() {
   const parameters = [
     {
-      name: 'url',
-      type: 'string',
-      desc: 'The URL to fetch data from.',
+      name: 'list',
+      type: 'any[]',
+      desc: 'The paging data.',
     },
     {
       name: 'options',
       type: 'object',
-      desc: 'Additional options for the fetch request. If options.manual = true is set, useFetch will not be executed by default, and the execution needs to be triggered by run.',
+      desc: 'The additional options for the pagination.',
+    },
+    {
+      name: 'options.pageSize',
+      type: 'number[]',
+      desc: 'Number of elements to display for each page.',
+    },
+    {
+      name: 'options.defaultPage',
+      type: 'number',
+      desc: 'The initial page.',
     },
   ];
   const returnedValue = [
     {
-      name: 'state',
-      type: 'object',
-      desc: 'The state object containing the fetched data and fetching status.',
+      name: 'result',
+      type: 'any[]',
+      desc: 'The data of current page.',
     },
     {
-      name: 'state.data',
-      type: 'any | null',
-      desc: 'The fetched data if the fetch was successful, otherwise null.',
+      name: 'totalPages',
+      type: 'number[]',
+      desc: 'The list of total pages.',
     },
     {
-      name: 'state.loading',
-      type: 'boolean',
-      desc: 'The fetching loading status.',
+      name: 'currentPage',
+      type: 'number',
+      desc: 'The number of current page.',
     },
     {
-      name: 'state.error',
-      type: 'string | null',
-      desc: 'The error message if an error occurred during the fetch, otherwise null.',
+      name: 'pageSize',
+      type: 'number',
+      desc: 'The page size information.',
     },
     {
-      name: 'state.run',
-      type: '() => void',
-      desc: 'The run method triggers a fetch execution.',
+      name: 'onChange',
+      type: '(current: number, pageSize: number) => void',
+      desc: 'The method for switching pages.',
+    },
+    {
+      name: 'changeCurrentPage',
+      type: '(page?: number) => void',
+      desc: 'The method for switching pages.',
+    },
+    {
+      name: 'changePageSize',
+      type: '(size: number) => void',
+      desc: 'The method for switching pages.',
     },
   ];
+
   const scrollPositions = [
     {
       from: 0,
@@ -64,34 +85,34 @@ export default function Fetch() {
     },
     {
       from: 210,
-      to: 330,
+      to: 650,
     },
     {
-      from: 330,
-      to: 550,
+      from: 650,
+      to: 950,
     },
     {
-      from: 550,
-      to: 900,
+      from: 950,
+      to: 1380,
     },
     {
-      from: 900,
-      to: 1550,
+      from: 1380,
+      to: 2090,
     },
     {
-      from: 1550,
-      to: 1700,
+      from: 2090,
+      to: 2200,
     },
     {
-      from: 1700,
-      to: 1900,
+      from: 2200,
+      to: 2500,
     },
   ];
 
   return (
     <>
       <div>
-        <Title>useFetch</Title>
+        <Title>usePagination</Title>
         <Container id="description">
           <DescriptionTitle>
             DESCRIPTION:{' '}
@@ -100,10 +121,8 @@ export default function Fetch() {
             </a>
           </DescriptionTitle>
           <div>
-            The useFetch hook allows you to easily fetch data from a specified
-            URL using the fetch API and provides a consistent pattern for
-            handling loading, success, and error states. The fetching data which
-            will be automatically triggered when the component is first loaded.
+            The usePagination hook encapsulates common paging logic. It's
+            commonly used for breaking big data into the pages.
           </div>
         </Container>
         <Container id="api">
@@ -145,7 +164,7 @@ export default function Fetch() {
               <LinkSvg as={LinkIcon} />
             </a>
           </DescriptionTitle>
-          <FetchDemo />
+          <PaginationDemo />
         </Container>
         <Container id="example">
           <DescriptionTitle>
@@ -174,8 +193,8 @@ export default function Fetch() {
               <LinkSvg as={LinkIcon} />
             </a>
           </DescriptionTitle>
-          <SourceCodeLink to={pages.source.useFetch}>
-            useFetch on Github
+          <SourceCodeLink to={pages.source.usePagination}>
+            usePagination on Github
           </SourceCodeLink>
         </Container>
       </div>

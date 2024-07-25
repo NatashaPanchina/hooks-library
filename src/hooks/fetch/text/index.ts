@@ -1,4 +1,9 @@
-export const api = `useFetch(url: string, options?: { manual: boolean })`;
+export const api = `useFetch(url: string, options?: { manual: boolean }) => {
+  data: any;
+  loading: boolean;
+  error: string | null;
+  run: () => void;
+}`;
 
 export const demoText = `import React, { useState } from 'react';
 import { useFetch } from '../useFetch';

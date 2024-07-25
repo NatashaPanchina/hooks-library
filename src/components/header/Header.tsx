@@ -21,7 +21,7 @@ export default function Header() {
         </SvgContainer>
         <HomeLinkDesc>re-Hooks</HomeLinkDesc>
       </HomeLink>
-      <DocsLink to={pages.useOutsideClick}>Docs</DocsLink>
+      <DocsLink to={pages.useFetch}>Docs</DocsLink>
       <SvgLink to={pages.github}>
         <Svg as={GithubIcon} />
       </SvgLink>

@@ -11,6 +11,7 @@ export const Container = styled(
   position: 'fixed',
   top: 0,
   left: 0,
+  zIndex: 100,
   width: `calc(100% - ${theme.spacing(4 * 2)})`,
   padding: `0px ${theme.spacing(4)}`,
   height: 56,

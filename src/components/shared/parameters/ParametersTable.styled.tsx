@@ -33,32 +33,61 @@ export const HeaderGrid = styled(
   (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
 )(({ theme }) => ({
   display: 'grid',
-  gridTemplateColumns: '1fr 1fr 3fr',
+  gridTemplateColumns: '100px 100px 3fr',
   gridColumnGap: theme.spacing(2),
   padding: theme.spacing(2),
   backgroundColor: theme.colors.grey[500],
   fontSize: '0.9rem',
+  '@media (min-width: 600px)': {
+    gridTemplateColumns: '1fr 1fr 2fr',
+  },
 }));
 
 export const InfoGrid = styled(
   (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
 )(({ theme }) => ({
   display: 'grid',
-  gridTemplateColumns: '1fr 1fr 3fr',
+  gridTemplateColumns: '100px 100px 2fr',
   gridColumnGap: theme.spacing(2),
   padding: theme.spacing(2),
+  textWrap: 'wrap',
+  '@media (min-width: 600px)': {
+    gridTemplateColumns: '1fr 1fr 2fr',
+  },
 }));
 
 export const Type = styled(
   (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
 )(({ theme }) => ({
   color: theme.colors.main.pink,
+  overflowX: 'scroll',
+  '@media (min-width: 700px)': {
+    overflow: 'hidden',
+  },
+  '&::-webkit-scrollbar': {
+    width: 5,
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: 'none',
+    borderRadius: theme.borderRadius * 2,
+  },
 }));
 
 export const Name = styled(
   (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
 )(({ theme }) => ({
   color: theme.colors.main.yellow,
+  overflowX: 'scroll',
+  '@media (min-width: 700px)': {
+    overflow: 'hidden',
+  },
+  '&::-webkit-scrollbar': {
+    width: 5,
+  },
+  '&::-webkit-scrollbar-thumb': {
+    background: 'none',
+    borderRadius: theme.borderRadius * 2,
+  },
 }));
 
 export const Hr = styled(
