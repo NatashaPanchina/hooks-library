@@ -5,6 +5,7 @@ import Home from '../components/home/Home';
 import Docs from '../components/docs/Docs';
 import Fetch from '../hooks/fetch/Fetch';
 import Toggle from '../hooks/toggle/Toggle';
+import Pagination from '../hooks/pagination/Pagination';
 
 export const router = createBrowserRouter([
   {
@@ -29,8 +30,12 @@ export const router = createBrowserRouter([
           },
           {
             path: 'useToggle',
-            element: <Toggle/>
-          }
+            element: <Toggle />,
+          },
+          {
+            path: 'usePagination',
+            element: <Pagination />,
+          },
         ],
       },
     ],

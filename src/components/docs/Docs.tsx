@@ -16,7 +16,7 @@ export default function Docs() {
   return (
     <Grid container sx={gridStyles}>
       <NavContainer>
-      <div>
+        <div>
           <DocsLink to={pages.useFetch}>useFetch</DocsLink>
         </div>
         <div>
@@ -24,6 +24,9 @@ export default function Docs() {
         </div>
         <div>
           <DocsLink to={pages.useOutsideClick}>useOutsideClick</DocsLink>
+        </div>
+        <div>
+          <DocsLink to={pages.usePagination}>usePagination</DocsLink>
         </div>
         <div>
           <DocsLink to={pages.useToggle}>useToggle</DocsLink>
