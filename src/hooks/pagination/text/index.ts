@@ -1,13 +1,19 @@
 export const demoText = `import { usePagination } from '../usePagination';
-import styles from './PaginationDemo.module.css';
 import { pokemons } from '../utils/data';
+import PageButtons from './PageButtons';
 
 export default function PaginationDemo() {
- const { result, totalPages, currentPage, changeCurrentPage, changePageSize } =
-    usePagination(pokemons, {
-      pageSize: 7,
-      defaultPage: 1,
-    });
+  const {
+    result,
+    totalPages,
+    pageSize,
+    currentPage,
+    changeCurrentPage,
+    changePageSize,
+  } = usePagination(pokemons, {
+    pageSize: 7,
+    defaultPage: 1,
+  });
 
   return (
     <div>
@@ -47,19 +53,11 @@ export default function PaginationDemo() {
           </div>
         ))}
       </div>
-      <div>
-        {totalPages.map((page) => (
-          <button
-            className={\`\${styles.button} \${
-              page === currentPage ? styles.active : ''
-            }\`}
-            onClick={() => changeCurrentPage(page)}
-            key={page}
-          >
-            {page}
-          </button>
-        ))}
-      </div>
+      <PageButtons
+        totalPages={totalPages}
+        currentPage={currentPage}
+        changeCurrentPage={changeCurrentPage}
+      />
     </div>
   );
 }`;
@@ -67,14 +65,14 @@ export default function PaginationDemo() {
 export const hookText = `/**
  * A pagination hook
  *
- * @param list the data for pagination
+ * @param list the paging data
  * @param options additional options for the pagination.
- * @param options.pageSize count of displaying items for each page.
- * @param options.defaultPage the default page to display.
- * @returns the data of the page, total pages, current page and the onChange method for page navigation.
+ * @param options.pageSize number of elements to display for each page.
+ * @param options.defaultPage the initial page.
+ * @returns the data of the current page, total pages, the current page and the onChange methods for paging input data.
  */
 export const usePagination = (list: Array<any>, options: OptionsType = {}) => {
-    const { pageSize = 10, defaultPage = 1 } = options;
+  const { pageSize = 10, defaultPage = 1 } = options;
 
   const [size, setSize] = useState(pageSize);
   const [currentPage, setCurrentPage] = useState(defaultPage);
@@ -89,10 +87,15 @@ export const usePagination = (list: Array<any>, options: OptionsType = {}) => {
   };
 
   const changeCurrentPage = (page?: number) => {
-    if (page !== undefined && page > 0 && page <= totalPages.length) {
+    if (page === undefined) {
+      if (currentPage < totalPages.length) {
+        setCurrentPage((oldPage) => oldPage + 1);
+      }
+      return;
+    }
+    if (page < 1) return;
+    if (page <= totalPages.length) {
       setCurrentPage(page);
-    } else if (currentPage < totalPages.length) {
-      setCurrentPage((oldPage) => oldPage + 1);
     }
   };
 

@@ -4,11 +4,25 @@
     border-radius: 8px;
     text-align: center;
     position: relative;
-    min-height: 660px;
+    height: 660px;
+    overflow-y: auto;
     @media (min-width: 600px) {
         padding: 20px;
-        min-height: 618px;
+        height: 618px;
     }
+}
+
+.container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: none;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #2a2a29;
+    border-radius: 8px;
 }
 
 .header {
@@ -24,8 +38,6 @@
 
 .list_container {
     border: 2px solid #231f20;
-    max-height: 470px;
-    overflow-y: auto;
 }
 
 .list_container::-webkit-scrollbar {
@@ -113,12 +125,16 @@
     background: none;
     color: #7b7b76;
     border: none;
-    margin-left: 12px;
-    margin-right: 12px;
     border-radius: 50%;
     font-weight: 600;
-    height: 30px;
-    width: 30px;
+    margin-left: 6px;
+    margin-right: 6px;
+    @media (min-width: 600px) {
+        height: 30px;
+        width: 30px;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
 }
   
 .buttons_container, .count_buttons_container {
@@ -130,9 +146,8 @@
 }
 
 .buttons_container {
-    width: calc(100% - 36px);
-    position: absolute;
-    bottom: 20px;
+    width: 100%;
+    color: #7b7b76;
 }
 
 .button:hover {
@@ -174,4 +189,24 @@
     background: none;
     color: #f9f4da;
     border: 1px solid #fcba28;
+}
+
+.nav_icon {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.nav_icon svg {
+    height: 24px;
+}
+
+.nav_icon:hover svg {
+    height: 26px;
+    transition: all 0.2s ease-out;
+ }
+
+.nav_icon:hover svg path {
+   fill: #fff;
+   transition: all 0.2s ease-out;
 }

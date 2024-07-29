@@ -13,7 +13,7 @@ interface OptionsType {
  * @param options additional options for the pagination.
  * @param options.pageSize number of elements to display for each page.
  * @param options.defaultPage the initial page.
- * @returns the data of the current page, total pages, the current page and the onChange methods for paging input data.
+ * @returns the data of current page, total pages, the current page number and the methods for paging input data.
  */
 export const usePagination = (list: Array<any>, options: OptionsType = {}) => {
   const { pageSize = 10, defaultPage = 1 } = options;
@@ -31,10 +31,15 @@ export const usePagination = (list: Array<any>, options: OptionsType = {}) => {
   };
 
   const changeCurrentPage = (page?: number) => {
-    if (page !== undefined && page > 0 && page <= totalPages.length) {
+    if (page === undefined) {
+      if (currentPage < totalPages.length) {
+        setCurrentPage((oldPage) => oldPage + 1);
+      }
+      return;
+    }
+    if (page < 1) return;
+    if (page <= totalPages.length) {
       setCurrentPage(page);
-    } else if (currentPage < totalPages.length) {
-      setCurrentPage((oldPage) => oldPage + 1);
     }
   };
 
