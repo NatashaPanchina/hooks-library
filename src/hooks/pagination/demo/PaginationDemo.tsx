@@ -25,7 +25,10 @@ export default function PaginationDemo() {
             pageSize === 5 ? styles.count_active : ''
           }`}
           data-testid="5"
-          onClick={() => changePageSize(5)}
+          onClick={() => {
+            changePageSize(5);
+            if (currentPage > 20) changeCurrentPage(20);
+          }}
         >
           5
         </button>
@@ -34,7 +37,10 @@ export default function PaginationDemo() {
             pageSize === 10 ? styles.count_active : ''
           }`}
           data-testid="10"
-          onClick={() => changePageSize(10)}
+          onClick={() => {
+            changePageSize(10);
+            if (currentPage > 10) changeCurrentPage(10);
+          }}
         >
           10
         </button>
@@ -42,7 +48,10 @@ export default function PaginationDemo() {
           className={`${styles.count_button} ${
             pageSize === 15 ? styles.count_active : ''
           }`}
-          onClick={() => changePageSize(15)}
+          onClick={() => {
+            changePageSize(15);
+            if (currentPage > 7) changeCurrentPage(7);
+          }}
         >
           15
         </button>
@@ -50,7 +59,10 @@ export default function PaginationDemo() {
           className={`${styles.count_button} ${
             pageSize === 20 ? styles.count_active : ''
           }`}
-          onClick={() => changePageSize(20)}
+          onClick={() => {
+            changePageSize(20);
+            if (currentPage > 5) changeCurrentPage(5);
+          }}
         >
           20
         </button>
