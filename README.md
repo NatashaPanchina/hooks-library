@@ -7,5 +7,5 @@
 - [useFetch](https://re-hooks.web.app/)
 - [useLocalStorage](https://re-hooks.web.app/docs/useLocalStorage)
 - [useOutsideClick](https://re-hooks.web.app/docs/useOutsideClick)
-- [usePagination] (https://re-hooks.web.app/docs/usePagination)
+- [usePagination](https://re-hooks.web.app/docs/usePagination)
 - [useToggle](https://re-hooks.web.app/docs/useToggle)
