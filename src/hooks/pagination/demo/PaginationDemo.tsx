@@ -1,6 +1,7 @@
 import { usePagination } from '../usePagination';
 import styles from './PaginationDemo.module.css';
 import { pokemons } from '../utils/data';
+import PageButtons from './PageButtons';
 
 export default function PaginationDemo() {
   const {
@@ -23,6 +24,7 @@ export default function PaginationDemo() {
           className={`${styles.count_button} ${
             pageSize === 5 ? styles.count_active : ''
           }`}
+          data-testid="5"
           onClick={() => changePageSize(5)}
         >
           5
@@ -31,6 +33,7 @@ export default function PaginationDemo() {
           className={`${styles.count_button} ${
             pageSize === 10 ? styles.count_active : ''
           }`}
+          data-testid="10"
           onClick={() => changePageSize(10)}
         >
           10
@@ -73,19 +76,11 @@ export default function PaginationDemo() {
           </div>
         ))}
       </div>
-      <div className={styles.buttons_container}>
-        {totalPages.map((page) => (
-          <button
-            className={`${styles.button} ${
-              page === currentPage ? styles.active : ''
-            }`}
-            onClick={() => changeCurrentPage(page)}
-            key={page}
-          >
-            {page}
-          </button>
-        ))}
-      </div>
+      <PageButtons
+        totalPages={totalPages}
+        currentPage={currentPage}
+        changeCurrentPage={changeCurrentPage}
+      />
     </div>
   );
 }

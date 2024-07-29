@@ -64,7 +64,7 @@ export default function Pagination() {
     {
       name: 'onChange',
       type: '(current: number, pageSize: number) => void',
-      desc: 'The method for switching pages.',
+      desc: 'The method for switching pages and changing current page.',
     },
     {
       name: 'changeCurrentPage',
@@ -74,7 +74,7 @@ export default function Pagination() {
     {
       name: 'changePageSize',
       type: '(size: number) => void',
-      desc: 'The method for switching pages.',
+      desc: 'The method for changing current page.',
     },
   ];
 
