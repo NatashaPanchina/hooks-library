@@ -10,3 +10,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes scroll {
+  0% {
+    transform: translate(0)
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}

@@ -7,10 +7,12 @@ export const themeColors = {
       salmon: '#cc9393',
       green: '#7f9f7f',
       black: '#0f0d0e',
-      pink: '#F38BA3',
+      pink: '#D89E9A',
       yellow: '#FCBA28',
       purple: '#b586f8',
       violet: '#CA89FF',
+      lightGreen: '#9BBFA0',
+      darkPink: '#A56764',
     },
     black: '#000000',
     grey: {
@@ -33,10 +35,12 @@ export interface CustomTheme extends Theme {
       salmon: '#cc9393';
       green: '#7f9f7f';
       black: '#0f0d0e';
-      pink: '#F38BA3';
+      pink: '#D89E9A';
       yellow: '#FCBA28';
       purple: '#b586f8';
       violet: '#CA89FF';
+      lightGreen: '#9BBFA0';
+      darkPink: '#A56764';
     };
     black: '#000000';
     grey: {
