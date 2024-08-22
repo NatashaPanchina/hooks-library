@@ -24,7 +24,7 @@ export const Title = styled(
 )(({ theme }) => ({
   fontSize: '2rem',
   fontWeight: 700,
-  color: theme.colors.main.violet,
+  color: theme.colors.main.lightGreen,
 }));
 
 export const DescriptionTitle = styled(

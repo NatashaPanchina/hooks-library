@@ -4,7 +4,7 @@ import { HTMLAttributes } from 'react';
 import { NavLink, NavLinkProps } from 'react-router-dom';
 
 export const Container = styled(
-  (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <div {...props} />,
+  (props: ThemeProps & HTMLAttributes<HTMLDivElement>) => <header {...props} />,
 )(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
@@ -83,9 +83,9 @@ export const Svg = styled((props: ThemeProps & HTMLAttributes<SVGElement>) => (
 ))(() => ({
   height: 30,
   width: 30,
+  transition: 'all .15s ease-in-out',
   '&:hover': {
     height: 33,
     width: 33,
-    transition: 'all .15s ease-in-out',
   },
 }));

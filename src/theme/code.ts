@@ -4,7 +4,7 @@ export const codeTheme = {
   backgroundColor: `#0f0d0e`,
   textColor: `#f9f4da`,
   substringColor: `#f1fa8c`,
-  keywordColor: `#F38BA3`,
+  keywordColor: `#D89E9A`,
   attributeColor: `#50fa7b`,
   selectorTagColor: `#8be9fd`,
   docTagColor: `#f1fa8c`,
