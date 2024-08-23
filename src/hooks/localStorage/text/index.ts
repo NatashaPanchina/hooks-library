@@ -20,9 +20,7 @@ export default function LocalStorageDemo() {
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
-          <button
-            onClick={() => setStorageName(name)}
-          >
+          <button onClick={() => setStorageName(name)}>
             CHANGE
           </button>
         </div>
