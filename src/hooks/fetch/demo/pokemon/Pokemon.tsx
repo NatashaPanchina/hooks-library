@@ -1,12 +1,5 @@
+import { AbilityType, PokemonsType, Type } from '../../types';
 import styles from './Pokemon.module.css';
-
-interface Type {
-  slot: number;
-  type: {
-    name: string;
-    url: string;
-  };
-}
 
 const renderTypes = (types: Array<Type>) => {
   return types.map((type, index) => {
@@ -17,15 +10,6 @@ const renderTypes = (types: Array<Type>) => {
     );
   });
 };
-
-interface AbilityType {
-  ability: {
-    name: string;
-    url: string;
-  };
-  is_hidden: boolean;
-  slot: number;
-}
 
 const renderAbilities = (abilities: Array<AbilityType>) => {
   return abilities
@@ -39,23 +23,7 @@ const renderAbilities = (abilities: Array<AbilityType>) => {
     });
 };
 
-interface PropsType {
-  data: {
-    abilities: Array<AbilityType>;
-    id: number;
-    name: string;
-    sprites: {
-      other: {
-        'official-artwork': {
-          front_default: string;
-        };
-      };
-    };
-    types: Array<Type>;
-  };
-}
-
-export default function Pokemon({ data }: PropsType) {
+export default function Pokemon({ data }: PokemonsType) {
   return (
     <div className={styles.container}>
       <img

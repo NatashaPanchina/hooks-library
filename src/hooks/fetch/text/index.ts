@@ -23,8 +23,7 @@ export default function FetchDemo() {
       ) : (
         <>
           <div>
-            <div
-              onClick={() =>
+            <div onClick={() =>
                 setPokemon((prev) => {
                   if (prev === 1) return prev;
                   return prev - 1;
@@ -33,9 +32,7 @@ export default function FetchDemo() {
             >
               Previous
             </div>
-            <div
-              onClick={() => setPokemon((prev) => prev + 1)}
-            >
+            <div onClick={() => setPokemon((prev) => prev + 1)}>
               Next
             </div>
           </div>

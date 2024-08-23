@@ -5,18 +5,13 @@ import { getPages, isDisplayDots } from './utils';
 import PrevIcon from '../../../assets/icons/arrowLeft.svg?react';
 import NextIcon from '../../../assets/icons/arrowRight.svg?react';
 import React from 'react';
-
-interface PropTypes {
-  totalPages: number[];
-  currentPage: number;
-  changeCurrentPage: (page?: number) => void;
-}
+import { PageButtonsTypes } from '../types';
 
 export default function PageButtons({
   totalPages,
   currentPage,
   changeCurrentPage,
-}: PropTypes) {
+}: PageButtonsTypes) {
   const pages = getPages(totalPages, currentPage);
   const dots = isDisplayDots(pages);
 

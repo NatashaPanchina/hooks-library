@@ -19,4 +19,5 @@ export const pages = {
   useFetch: '/docs/useFetch',
   useToggle: '/docs/useToggle',
   usePagination: '/docs/usePagination',
+  usePreferredLanguage: '/docs/usePreferredLanguage',
 };

@@ -34,7 +34,7 @@ export const getPages = (pages: number[], currentPage: number) => {
 
 export const isDisplayDots = (pages: number[]) => {
   const result = { start: false, end: false };
-  const lastPage = pages[pages.length - 1]; //20
+  const lastPage = pages[pages.length - 1];
 
   if (!pages.length) return result;
   if (pages.length <= 5) return result;
