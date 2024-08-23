@@ -1,18 +1,11 @@
+import { hooks } from '../../../utils/constants/hooks';
 import { Container, HookContainer } from './HooksList.styled';
 
 export default function HooksList() {
-  const hooks = [
-    'useFetch',
-    'useLocalStorage',
-    'useOutsideClick',
-    'usePagination',
-    'usePreferredLanguage',
-    'useToggle',
-  ];
   return (
     <Container>
       {hooks.map((hook) => (
-        <HookContainer key={hook}>{hook}</HookContainer>
+        <HookContainer key={hook.name}>{hook.name}</HookContainer>
       ))}
     </Container>
   );

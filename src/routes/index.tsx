@@ -7,6 +7,7 @@ import Fetch from '../hooks/fetch/Fetch';
 import Toggle from '../hooks/toggle/Toggle';
 import Pagination from '../hooks/pagination/Pagination';
 import About from '../components/about/About';
+import PreferredLanguage from '../hooks/preferredLanguage/PreferredLanguage';
 
 export const router = createBrowserRouter([
   {
@@ -26,24 +27,28 @@ export const router = createBrowserRouter([
         element: <Docs />,
         children: [
           {
-            path: 'useOutsideClick',
-            element: <OutsideClick />,
+            path: 'useFetch',
+            element: <Fetch />,
           },
           {
             path: 'useLocalStorage',
             element: <LocalStorage />,
           },
           {
-            path: 'useFetch',
-            element: <Fetch />,
-          },
-          {
-            path: 'useToggle',
-            element: <Toggle />,
+            path: 'useOutsideClick',
+            element: <OutsideClick />,
           },
           {
             path: 'usePagination',
             element: <Pagination />,
+          },
+          {
+            path: 'usePreferredLanguage',
+            element: <PreferredLanguage />,
+          },
+          {
+            path: 'useToggle',
+            element: <Toggle />,
           },
         ],
       },

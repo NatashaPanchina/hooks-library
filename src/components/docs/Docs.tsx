@@ -1,8 +1,8 @@
 import { Outlet } from 'react-router-dom';
 import { DocsContainer, DocsLink, NavContainer } from './Docs.styled';
 import { Grid } from '@mui/material';
-import { pages } from '../../utils/constants/pages';
 import Header from '../header/Header';
+import { hooks } from '../../utils/constants/hooks';
 
 export default function Docs() {
   const gridStyles = {
@@ -35,21 +35,11 @@ export default function Docs() {
     >
       <Header />
       <NavContainer>
-        <div>
-          <DocsLink to={pages.useFetch}>useFetch</DocsLink>
-        </div>
-        <div>
-          <DocsLink to={pages.useLocalStorage}>useLocalStorage</DocsLink>
-        </div>
-        <div>
-          <DocsLink to={pages.useOutsideClick}>useOutsideClick</DocsLink>
-        </div>
-        <div>
-          <DocsLink to={pages.usePagination}>usePagination</DocsLink>
-        </div>
-        <div>
-          <DocsLink to={pages.useToggle}>useToggle</DocsLink>
-        </div>
+        {hooks.map((hook) => (
+          <div key={hook.name}>
+            <DocsLink to={hook.route}>{hook.name}</DocsLink>
+          </div>
+        ))}
       </NavContainer>
       <Grid item xs={12}>
         <DocsContainer>
