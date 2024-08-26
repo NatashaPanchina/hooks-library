@@ -11,11 +11,20 @@ code {
     monospace;
 }
 
-@keyframes scroll {
+@keyframes scroll-horizontal {
   0% {
-    transform: translate(0)
+    transform: translateX(100%);
   }
   100% {
-    transform: translateY(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes scroll2-horizontal {
+  0% {
+    transform: translateX(0)
+  }
+  100% {
+    transform: translateX(-200%)
   }
 }
